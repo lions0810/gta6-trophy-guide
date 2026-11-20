@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Platinum — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="topbar">
+  <div class="brand">
+    <h1>Leonida Platinum</h1>
+    <p class="tagline">Grand Theft Auto VI — the complete PS5 trophy guide &amp; tracker. All 55 official trophies: 1 platinum, 2 gold, 6 silver, 46 bronze. Works offline.</p>
+  </div>
+  <div class="progress-box">
+    <p id="progress-label">0 of 55 earned</p>
+    <div id="progress-track"><div id="progress-fill"></div></div>
+    <p id="grade-counts">Platinum 0/1 · Gold 0/2 · Silver 0/6 · Bronze 0/46</p>
+  </div>
+</header>
+
+<nav id="view-tabs">
+  <button id="tab-checklist" type="button" class="tab active">Checklist &amp; Guide</button>
+  <button id="tab-roadmap" type="button" class="tab">Roadmap to Platinum</button>
+  <button id="tab-missables" type="button" class="tab">Missables</button>
+</nav>
+
+<section id="controls">
+  <label>Search <input id="search" type="search" placeholder="trophy, mission, place…"></label>
+  <label>Grade
+    <select id="grade-filter">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label>Kind
+    <select id="kind-filter">
+      <option value="all">All kinds</option>
+      <option value="story">Story</option>
+      <option value="strangers">Strangers</option>
+      <option value="collectibles">Collectibles</option>
+      <option value="activities">Activities</option>
+      <option value="exploration">Exploration</option>
+      <option value="crime">Crime</option>
+      <option value="combat">Combat</option>
+      <option value="economy">Economy</option>
+      <option value="secret">Secret / hidden</option>
+      <option value="completion">Completion</option>
+      <option value="platinum">Platinum</option>
+    </select>
+  </label>
+  <label>Show
+    <select id="status-filter">
+      <option value="all">All trophies</option>
+      <option value="remaining">Remaining</option>
+      <option value="earned">Earned</option>
+      <option value="missable">Missable only</option>
+    </select>
+  </label>
+  <label class="check"><input id="spoiler-toggle" type="checkbox"> Spoiler shield: hide story trophies until earned</label>
+  <button id="export-btn" type="button">Export progress</button>
+  <label class="import-label">Import progress <input id="import-file" type="file" accept="application/json"></label>
+  <button id="reset-btn" type="button">Reset</button>
+</section>
+
+<main id="layout">
+  <section id="checklist-view">
+    <p id="result-count"></p>
+    <p id="data-note">Data: the official PS5 list as published by Exophase, cross-checked with PSNProfiles — 55 trophies, 28 of them hidden until earned.</p>
+    <ul id="trophy-list"></ul>
+  </section>
+  <aside id="detail-panel">
+    <h2 id="detail-name">Pick a trophy</h2>
+    <p id="detail-meta">Its official description, grade, kind and cited guide appear here.</p>
+    <p id="detail-desc"></p>
+    <p id="detail-warning"></p>
+    <p id="detail-guide">Select any trophy in the checklist to read its guide. Every guide is written for this page and names its sources.</p>
+    <p id="detail-source"></p>
+  </aside>
+</main>
+
+<section id="roadmap-view" hidden>
+  <h2>Roadmap to the Platinum — built from the official descriptions</h2>
+  <p class="road-note">Order matters where the descriptions say it does: chapters and missions unlock in sequence, strand finals need their earlier missions, and one meditation spot sits inside Chapter 1. Everything else is free-roam and can be swept in any order.</p>
+  <ol id="roadmap-stages"></ol>
+</section>
+
+<section id="missables-view" hidden>
+  <h2>Missable trophies</h2>
+  <p class="road-note">Checked against Exophase, PSNProfiles and PowerPyx: exactly one trophy is flagged potentially missable. Everything else on the list can still be earned after the story, in free roam or by replaying an activity.</p>
+  <ul id="missable-list"></ul>
+</section>
+
+<footer id="colophon">
+  <p>Sources: official trophy names, descriptions and grades — Exophase, “Grand Theft Auto VI Trophies — PS5”, cross-checked with PSNProfiles (trophies/43531-grand-theft-auto-vi). Missable reporting — PowerPyx, GTA 6 trophy guide &amp; roadmap. Guides are this entry's own words; a source is cited, never copied. No Rockstar Games logo or artwork is used; the Leonida neon-sunset look is original CSS.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

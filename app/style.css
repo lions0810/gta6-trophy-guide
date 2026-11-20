@@ -1,0 +1,106 @@
+:root {
+  --ink: #f4ede4;
+  --muted: #a79fb2;
+  --bg: #120d1d;
+  --panel: #1d1430;
+  --panel2: #251a3d;
+  --line: #3d2c5e;
+  --sun: #ff9a3d;
+  --pink: #ff4f81;
+  --teal: #2fd4c4;
+  --gold: #f2c14e;
+  --silver: #cfd6dd;
+  --bronze: #d08a4e;
+  --platinum: #a8e6ff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  background:
+    linear-gradient(180deg, #2b1150 0, #571d5e 120px, #93305c 210px, #d6543f 300px, var(--bg) 430px);
+  background-color: var(--bg);
+  min-height: 100vh;
+}
+#topbar {
+  display: flex; gap: 24px; justify-content: space-between; align-items: flex-end;
+  padding: 26px 28px 14px; flex-wrap: wrap;
+}
+.brand h1 {
+  margin: 0; font-size: 40px; letter-spacing: 1px; font-weight: 800;
+  background: linear-gradient(92deg, #ffe29a, var(--sun) 45%, var(--pink));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  text-transform: uppercase;
+}
+.tagline { margin: 6px 0 0; max-width: 640px; color: #ffe9d2; font-size: 14px; line-height: 1.45; }
+.progress-box { min-width: 300px; flex: 0 1 380px; background: rgba(18, 13, 29, .72); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; }
+#progress-label { margin: 0 0 8px; font-size: 20px; font-weight: 700; }
+#progress-track { height: 12px; border-radius: 6px; background: #0c0817; overflow: hidden; }
+#progress-fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--teal), var(--sun), var(--pink)); transition: width .3s; }
+#grade-counts { margin: 8px 0 0; color: var(--muted); font-size: 12.5px; }
+#view-tabs { display: flex; gap: 8px; padding: 4px 28px 0; }
+.tab {
+  background: var(--panel); color: var(--ink); border: 1px solid var(--line);
+  border-bottom: none; border-radius: 10px 10px 0 0; padding: 9px 18px; font-size: 14.5px; cursor: pointer;
+}
+.tab.active { background: var(--panel2); color: #ffd9a0; font-weight: 700; box-shadow: inset 0 3px 0 var(--sun); }
+#controls {
+  display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center;
+  margin: 0 28px; padding: 12px 16px; background: var(--panel2);
+  border: 1px solid var(--line); border-radius: 0 12px 12px 12px; font-size: 13.5px;
+}
+#controls input[type="search"], #controls select {
+  background: #120d1d; color: var(--ink); border: 1px solid var(--line);
+  border-radius: 7px; padding: 6px 8px; font-size: 13.5px;
+}
+#controls button, .import-label {
+  background: #34235c; color: var(--ink); border: 1px solid var(--line);
+  border-radius: 7px; padding: 6px 12px; font-size: 13.5px; cursor: pointer;
+}
+.import-label input { display: none; }
+.check { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+#layout { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 18px; padding: 16px 28px; align-items: start; }
+#result-count { color: var(--muted); margin: 2px 0 4px; font-size: 13px; }
+#data-note { color: var(--teal); margin: 0 0 10px; font-size: 12.5px; }
+.trophy input[type="checkbox"]:focus-visible, .tab:focus-visible, #controls button:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+#trophy-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.trophy {
+  display: grid; grid-template-columns: 30px 12px minmax(0, 1fr) auto; gap: 10px; align-items: center;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px; cursor: pointer;
+}
+.trophy:hover { border-color: var(--sun); }
+.trophy.selected { border-color: var(--pink); box-shadow: 0 0 0 1px var(--pink); }
+.trophy.earned { opacity: .78; }
+.trophy input[type="checkbox"] { width: 19px; height: 19px; accent-color: var(--teal); cursor: pointer; }
+.swatch { width: 12px; height: 26px; border-radius: 3px; }
+.swatch.platinum { background: var(--platinum); } .swatch.gold { background: var(--gold); }
+.swatch.silver { background: var(--silver); } .swatch.bronze { background: var(--bronze); }
+.t-name { font-weight: 700; font-size: 15px; }
+.t-desc { color: var(--muted); font-size: 12.8px; margin-top: 1px; }
+.t-badges { display: flex; gap: 6px; align-items: center; font-size: 11.5px; }
+.badge { border: 1px solid var(--line); border-radius: 20px; padding: 2px 8px; color: var(--muted); text-transform: capitalize; }
+.badge.grade { color: #120d1d; font-weight: 700; text-transform: capitalize; }
+.badge.grade.platinum { background: var(--platinum); } .badge.grade.gold { background: var(--gold); }
+.badge.grade.silver { background: var(--silver); } .badge.grade.bronze { background: var(--bronze); }
+.badge.miss { background: #5e1230; color: #ffb3c8; border-color: var(--pink); font-weight: 700; }
+.badge.hiddenb { color: var(--teal); border-color: var(--teal); }
+.blurred .t-name, .blurred .t-desc { filter: blur(5px); user-select: none; }
+#detail-panel {
+  position: sticky; top: 14px; background: var(--panel2); border: 1px solid var(--line);
+  border-radius: 12px; padding: 18px; line-height: 1.5;
+}
+#detail-panel h2 { margin: 0 0 4px; font-size: 21px; }
+#detail-meta { color: var(--muted); font-size: 12.5px; margin: 0 0 10px; text-transform: capitalize; }
+#detail-desc { font-style: italic; color: #ffd9a0; margin: 0 0 10px; }
+#detail-warning { display: none; background: #5e1230; border: 1px solid var(--pink); color: #ffd7e2; border-radius: 8px; padding: 8px 10px; font-size: 13px; }
+#detail-guide { font-size: 14px; margin: 0 0 10px; }
+#detail-source { color: var(--teal); font-size: 12.5px; margin: 0; }
+#roadmap-view, #missables-view { margin: 16px 28px; background: var(--panel2); border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px; }
+.road-note { color: var(--muted); max-width: 860px; line-height: 1.5; }
+#roadmap-stages { line-height: 1.55; }
+#roadmap-stages li { margin-bottom: 14px; }
+#roadmap-stages .stage-names { color: var(--muted); font-size: 13px; }
+#missable-list { line-height: 1.55; }
+#colophon { padding: 8px 28px 26px; color: var(--muted); font-size: 12.5px; line-height: 1.5; }
+@media (max-width: 900px) { #layout { grid-template-columns: 1fr; } #detail-panel { position: static; } }
