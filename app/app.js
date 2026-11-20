@@ -96,7 +96,8 @@ function matchesFilters(trophy) {
 function renderProgress() {
   const total = state.trophies.length;
   const done = state.earned.size;
-  document.getElementById("progress-label").textContent = `${done} of ${total} earned`;
+  const pct = total ? Math.round((done / total) * 100) : 0;
+  document.getElementById("progress-label").textContent = `${done} of ${total} earned — ${pct}%`;
   document.getElementById("progress-fill").style.width = total ? `${(done / total) * 100}%` : "0%";
   const parts = ["platinum", "gold", "silver", "bronze"].map((grade) => {
     const all = state.trophies.filter((t) => t.grade === grade);

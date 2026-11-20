@@ -109,7 +109,9 @@ async function main() {
       });
       const outPath = join(root, "screenshots", shot.file);
       writeFileSync(outPath, Buffer.from(shotResult.data, "base64"));
-      console.log(`${shot.file}: ${statSync(outPath).size} bytes (${width}x${height}) <- ${shot.path}`);
+      const size = statSync(outPath).size;
+      if (size > 262144) throw new Error(`${shot.file} is ${size} bytes — over the 256 KiB gate limit`);
+      console.log(`${shot.file}: ${size} bytes (${width}x${height}) <- ${shot.path}`);
     }
     page.close();
   } finally {

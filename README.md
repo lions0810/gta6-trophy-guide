@@ -15,7 +15,8 @@ An offline guide and tracker for all **55 PlayStation 5 trophies of Grand Theft 
   import of your progress as a JSON file.
 - **Filters & search** — by grade, by kind (story, strangers, collectibles, activities,
   exploration, crime, combat, economy, secret, completion), by earned / remaining /
-  missable-only, and by free text.
+  missable-only, and by free text. Press `/` anywhere to jump to the search box.
+  The progress header always shows the earned count, a percentage, and per-grade counts.
 - **Spoiler shield** — a setting that blurs story trophies' names and descriptions
   until you have earned them.
 - **Roadmap to the platinum** — a five-stage path built from the official descriptions:

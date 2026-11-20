@@ -48,4 +48,4 @@ if (trophyCount !== 55) {
 }
 
 writeFileSync(join(outputDir, "dossier.json"), buildDossier(outputDir, GATE_LIMITS));
-console.log(`Leonida Platinum handed in: app/ + ${shotCount} screenshots + dossier.json -> ${outputDir}`);
+console.log(`Leonida Platinum handed in: app/ (${trophyCount} trophies) + ${shotCount} screenshots + dossier.json -> ${outputDir}`);

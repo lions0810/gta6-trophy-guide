@@ -72,6 +72,7 @@ body {
 .trophy:hover { border-color: var(--sun); }
 .trophy.selected { border-color: var(--pink); box-shadow: 0 0 0 1px var(--pink); }
 .trophy.earned { opacity: .78; }
+.trophy.earned .t-name { color: var(--teal); }
 .trophy input[type="checkbox"] { width: 19px; height: 19px; accent-color: var(--teal); cursor: pointer; }
 .swatch { width: 12px; height: 26px; border-radius: 3px; }
 .swatch.platinum { background: var(--platinum); } .swatch.gold { background: var(--gold); }
